@@ -1,5 +1,6 @@
 import 'package:ef_test/features/dashboard/screens/dashboard_drawer.dart';
 import 'package:ef_test/features/role_management/bloc/role_management_bloc.dart';
+import 'package:ef_test/features/role_management/screens/role_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,7 +11,18 @@ class Dashboardscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Eureka Forbes Test - Role Config'),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: const Row(
+          children: [
+            Expanded(
+                child: Text(
+              'Eureka Forbes Test - Role Config',
+              style: TextStyle(color: Colors.black),
+            )),
+            RoleSwitch()
+          ],
+        ),
       ),
       body: Row(
         children: [

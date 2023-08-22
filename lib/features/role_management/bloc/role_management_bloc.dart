@@ -9,8 +9,14 @@ class RoleManagementCubit extends Cubit<RoleManagementState> {
   }
 
   void _loadRoleConfiguration() async {
-    emit(RoleManagementLoadeDState(RoleConfig.role2()));
-    await Future.delayed(const Duration(seconds: 5));
     emit(RoleManagementLoadeDState(RoleConfig.role1()));
+  }
+
+  void enableFirstRole() {
+    emit(RoleManagementLoadeDState(RoleConfig.role1()));
+  }
+
+  void enableSecondRole() {
+    emit(RoleManagementLoadeDState(RoleConfig.role2()));
   }
 }
